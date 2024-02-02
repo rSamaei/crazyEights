@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1.0">
+  <zoom_level>3</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>279</x>
+      <y>123</y>
+      <w>204</w>
+      <h>390</h>
+    </coordinates>
+    <panel_attributes>blackjackNEA::GameStage
+--
+-addPlayers = new setName(): setName
+~temp = new ArrayList(): ArrayList&lt;String&gt;
+~name: String
+~Hand: ArrayList&lt;Card&gt;
+~cardButtons = new ArrayList&lt;JButton&gt;(): ArrayList&lt;JButton&gt;
+~cardIds: ArrayList&lt;String&gt;
+~topCardString: String
+~cardSelected: Card
+~buttonClicked: Boolean
+~cardId: String
+~csc: clientSideConnection
+~pickSuit: PickSuitFrame
+-getSuit: Boolean
+-aceSelected: Card
+-downCard: javax.swing.JButton
+-drawButton: javax.swing.JButton
+-jButton1: javax.swing.JButton
+-jButton10: javax.swing.JButton
+-jButton11: javax.swing.JButton
+-jButton12: javax.swing.JButton
+-jButton13: javax.swing.JButton
+-jButton14: javax.swing.JButton
+-jButton15: javax.swing.JButton
+-jButton2: javax.swing.JButton
+-jButton3: javax.swing.JButton
+-jButton4: javax.swing.JButton
+-jButton5: javax.swing.JButton
+-jButton6: javax.swing.JButton
+-jButton7: javax.swing.JButton
+-jButton8: javax.swing.JButton
+-jButton9: javax.swing.JButton
+-jPanel1: javax.swing.JPanel
+-turnLabel: javax.swing.JLabel
+-pidNameLabel: javax.swing.JLabel
+-topCardButton: javax.swing.JButton
+--
++GameStage(String name, ArrayList&lt;Card&gt; hand, String topCard, clientSideConnection csc): ctor
++GameStage(): ctor
++setTopCard(String topCard): void
++addButtonActionListeners(): void
++setButtonIcons(ArrayList&lt;Card&gt; hand): void
++mergeSort(ArrayList&lt;T&gt; list, Comparator&lt;T&gt; comparator): void
++populateArrayList(): void
++setPidName(): void
++setTurnlabel(Boolean turn): void
++toggleAllButtons(): void
++buttonIsActive(): boolean
+-initComponents(): // &lt;editor-fold defaultstate="collapsed" desc="Generated Code"&gt;                          
+void
++buttonClicked(ActionEvent event): void
+-drawButtonActionPerformed(java.awt.event.ActionEvent evt): void
++buttonClicked(): boolean
+-handleCardButtonAction(int index): void
++ace(): void
+-handleDrawButtonAction(): void
++addButtonClickListener(JButton button, Card card, int index): void
++returnSelection(): String
++returnCard(): Card
+-jButton1ActionPerformed(java.awt.event.ActionEvent evt): void
+-jButton2ActionPerformed(java.awt.event.ActionEvent evt): void
+-jButton3ActionPerformed(java.awt.event.ActionEvent evt): void
+-jButton4ActionPerformed(java.awt.event.ActionEvent evt): void
+-jButton5ActionPerformed(java.awt.event.ActionEvent evt): void
+-jButton6ActionPerformed(java.awt.event.ActionEvent evt): void
+-jButton7ActionPerformed(java.awt.event.ActionEvent evt): void
+-jButton8ActionPerformed(java.awt.event.ActionEvent evt): void
+-jButton9ActionPerformed(java.awt.event.ActionEvent evt): void
+-jButton10ActionPerformed(java.awt.event.ActionEvent evt): void
+-jButton11ActionPerformed(java.awt.event.ActionEvent evt): void
+-jButton12ActionPerformed(java.awt.event.ActionEvent evt): void
+-jButton13ActionPerformed(java.awt.event.ActionEvent evt): void
+-jButton14ActionPerformed(java.awt.event.ActionEvent evt): void
+-jButton15ActionPerformed(java.awt.event.ActionEvent evt): void
++main(String args[]): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>486</x>
+      <y>123</y>
+      <w>99</w>
+      <h>189</h>
+    </coordinates>
+    <panel_attributes>blackjackNEA::Game
+--
+-currentPlayer: int
+-previousPlayer: int
+-playerIDs: String[]
+-deck: Deck
+-playerHand: ArrayList&lt;ArrayList&lt;Card&gt;&gt;
+-stockPile: ArrayList&lt;Card&gt;
+-validSuit: Card.Suit
+-validValue: Card.Value
+-cardsToDraw: int
+~gameDirection: boolean
+--
++Game(String[] pids): ctor
++start(Game game): void
++getTopCard(): Card
++getTopCardImage(): ImageIcon
++getTopCardImageString(): String
++isGameOver(): boolean
++gameWinner(): String
++getCurrentPlayer(): String
++getCurrentPlayerInt(): int
++getPreviousPlayerInt(): int
++isCurrentPlayer(int id): boolean
++getPreviousPlayer(int i): String
++getPlayers(): String[]
++getPlayerHand(String pid): ArrayList&lt;Card&gt;
++getPlayerHandSize(String pid): int
++getPlayerCard(String pid, int choice): Card
++hasEmptyHand(String pid): boolean
++checkWinner(): boolean
++validCardPlay(Card card): boolean
++checkPlayerTurn(String pid): void
++setCardSuit(Card.Suit suit): void
++playCard(Card card): void
++playAce(Card card, Card ace): void
++drawCard(): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>588</x>
+      <y>123</y>
+      <w>183</w>
+      <h>114</h>
+    </coordinates>
+    <panel_attributes>blackjackNEA::PickSuitFrame
+--
+-ace = null: Card.Value
+-chosenCard: Card
+-buttonClicked: Boolean
+-clubsButton: javax.swing.JButton
+-diamondsButton: javax.swing.JButton
+-heartButton: javax.swing.JButton
+-jLabel1: javax.swing.JLabel
+-jPanel1: javax.swing.JPanel
+-spadesButton: javax.swing.JButton
+--
++PickSuitFrame(): ctor
++chooseSuit(): Card
++clickedButton(): Boolean
+-initComponents(): // &lt;editor-fold defaultstate="collapsed" desc="Generated Code"&gt;                          
+void
+-heartButtonActionPerformed(java.awt.event.ActionEvent evt): void
+-diamondsButtonActionPerformed(java.awt.event.ActionEvent evt): void
+-spadesButtonActionPerformed(java.awt.event.ActionEvent evt): void
+-clubsButtonActionPerformed(java.awt.event.ActionEvent evt): void
++main(String args[]): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>774</x>
+      <y>123</y>
+      <w>138</w>
+      <h>114</h>
+    </coordinates>
+    <panel_attributes>blackjackNEA::server
+--
+-sd: ServerSocket
+-so: ServerSocket
+-playerIDs = new String[4]: String[]
+-numPlayers: int
+~game: Game
+-players = new serverSideConnection[4]: serverSideConnection[]
+-running: boolean
+-currentP: int
+-cardPlayed: Card
+-acePlayed: Card
+-checkWinner: Boolean
+--
++server(): ctor
++acceptConnections(): void
++updateTurn(): void
++receiveTurn(): void
++startGame(): void
++playCard(Card card): void
++playAce(Card card, Card ace): void
++main(String[] args): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>915</x>
+      <y>123</y>
+      <w>126</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>blackjackNEA::client
+--
+-name: String
+-csc: clientSideConnection
+-hand: ArrayList&lt;Card&gt;
+-topCardString: String
+-yourTurn: boolean
+-checkWinner: boolean
+-getCard: boolean
+-gs: GameStage
+-winner: String
+--
++client(String name): ctor
+-runMethodQueue(Queue&lt;Runnable&gt; methodQueue): void
++connectToServer(): void
++playerTurn(): void
++controlGUI(): void
++getCard(GameStage gs): void
++startGameState(): void
++updateGameStateAlt(Runnable callback): void
++updateGUI(): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>279</x>
+      <y>516</y>
+      <w>138</w>
+      <h>93</h>
+    </coordinates>
+    <panel_attributes>blackjackNEA::setName
+--
++playerIds: ArrayList&lt;String&gt;
+-doneButton: javax.swing.JButton
+-exitButton: javax.swing.JButton
+-jLabel1: javax.swing.JLabel
+-jLabel2: javax.swing.JLabel
+-jPanel1: javax.swing.JPanel
+-pidTextBox: javax.swing.JTextField
++name: String
+--
++setName(): ctor
++getPids(): String[]
+-initComponents(): void
+-exitButtonActionPerformed(java.awt.event.ActionEvent evt): void
+-doneButtonActionPerformed(java.awt.event.ActionEvent evt): void
+-pidTextBoxActionPerformed(java.awt.event.ActionEvent evt): void
++main(String args[]): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>420</x>
+      <y>516</y>
+      <w>90</w>
+      <h>93</h>
+    </coordinates>
+    <panel_attributes>blackjackNEA::clientSideConnection
+--
+-dataSocket: Socket
+-objectSocket: Socket
+-dataIn: DataInputStream
+-dataOut: DataOutputStream
+-objectIn: ObjectInputStream
+-objectOut: ObjectOutputStream
+--
++clientSideConnection(String name): ctor
++isConnected(Socket dataSocket): void
++receiveBoolean(): boolean
++checkWinner(): boolean
++receiveHand(): ArrayList&lt;Card&gt;
++receiveCard(): Card
++receiveCardString(): String
++sendCard(Card card): void
++closeConnection(): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>513</x>
+      <y>516</y>
+      <w>102</w>
+      <h>87</h>
+    </coordinates>
+    <panel_attributes>blackjackNEA::Deck
+--
+-cards: Card[]
+-cardsInDeck: int
+--
++Deck(): ctor
++reset(): void
++returnDeck(): Card[]
++returnSize(): int
++replaceDeckWith(ArrayList&lt;Card&gt; cards): void
++addToDeck(ArrayList&lt;Card&gt; cards): void
++isEmpty(): boolean
++shuffle(): void
++drawCard(): Card
++drawCardImage(): ImageIcon
++drawCard(int n): Card[]
++printDeck(): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>618</x>
+      <y>516</y>
+      <w>60</w>
+      <h>69</h>
+    </coordinates>
+    <panel_attributes>blackjackNEA::player
+--
+-width: int
+-height: int
+-contentPane: Container
+-message: JTextArea
+-csc: clientSideConnection
+--
++player(int w, int h): ctor
++setName(): void
++setUpGUI(): void
++connectToServer(): void
++main(String[] args): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>681</x>
+      <y>516</y>
+      <w>96</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>blackjackNEA::Card
+--
+-serialVersionUID = 1L: long
+-suit: Suit
+-value: Value
+--
++Card(final Suit suit, final Value value): ctor
++getSuit(): Suit
++getValue(): Value
++getValueUp(int index): Value
++getValueDown(int index): Value
++toString(): String
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>780</x>
+      <y>516</y>
+      <w>126</w>
+      <h>57</h>
+    </coordinates>
+    <panel_attributes>blackjackNEA::Menu
+--
+-play: javax.swing.JButton
+-exit: javax.swing.JButton
+-jPanel1: javax.swing.JPanel
+-jTextField1: javax.swing.JTextField
+--
++Menu(): ctor
+-exitActionPerformed(java.awt.event.ActionEvent evt): void
+-playActionPerformed(java.awt.event.ActionEvent evt): void
+-initComponents(): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>360</x>
+      <y>612</y>
+      <w>57</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>blackjackNEA::clientMain
+--
+--
++main(String[] args): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>420</x>
+      <y>612</y>
+      <w>57</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>blackjackNEA::output
+--
+--
++main(String[] args): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>480</x>
+      <y>612</y>
+      <w>54</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>blackjackNEA::codeSave
+--
+--
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
